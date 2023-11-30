@@ -299,7 +299,7 @@
 
       <section class="guide-section">
         <div class="guide-header">
-          <div class="header-info">
+          <div class="header-info" onclick="guideToggle()">
             <h4>Setup guide</h4>
             <p class="info">
               Use this personalized guide to get your store up and running.
@@ -307,16 +307,21 @@
 
             <div class="progress-section">
               <p>
-                <span id="selectItems">1</span> /
-                <span id="totalItems">5</span> completed
+                <span id="selectItems">0</span> /
+                <span id="totalItems">0</span> completed
               </p>
 
               <div class="progressbar">
-                <div class="bar" style="width: 20%"></div>
+                <div class="bar" style="width: 0%"></div>
               </div>
             </div>
           </div>
-          <button type="button" class="guide-icon expand">
+
+          <button
+            type="button"
+            class="guide-icon expand"
+            onclick="guideToggle()"
+          >
             <svg
               class="collapse-icon"
               width="10"
@@ -350,10 +355,10 @@
           </button>
         </div>
         <div class="guide-body">
-          <div class="guide-item">
-            <div class="item-header">
+          <div id="item_01" class="guide-item">
+            <div class="item-header" onclick="itemToggle('item_01')">
               <label class="select-button">
-                <input class="" type="checkbox" name="" id="" />
+                <input type="checkbox" class="radioInput" onclick="selectItem(this)" />
                 <svg
                   class="unchecked-radio"
                   width="24"
@@ -425,10 +430,10 @@
             </div>
           </div>
 
-          <div class="guide-item">
-            <div class="item-header">
+          <div id="item_02" class="guide-item">
+            <div class="item-header" onclick="itemToggle('item_02')">
               <label class="select-button">
-                <input class="" type="checkbox" name="" id="" />
+                <input type="checkbox" class="radioInput" onclick="selectItem(this)" />
                 <svg
                   class="unchecked-radio"
                   width="24"
@@ -530,10 +535,10 @@
             </div>
           </div>
 
-          <div class="guide-item">
-            <div class="item-header">
+          <div id="item_03" class="guide-item">
+            <div class="item-header" onclick="itemToggle('item_03')">
               <label class="select-button">
-                <input class="" type="checkbox" name="" id="" />
+                <input type="checkbox" class="radioInput" onclick="selectItem(this)" />
                 <svg
                   class="unchecked-radio"
                   width="24"
@@ -605,10 +610,10 @@
             </div>
           </div>
 
-          <div class="guide-item">
-            <div class="item-header">
+          <div id="item_04" class="guide-item">
+            <div class="item-header" onclick="itemToggle('item_04')">
               <label class="select-button">
-                <input class="" type="checkbox" name="" id="" />
+                <input type="checkbox" class="radioInput" onclick="selectItem(this)" />
                 <svg
                   class="unchecked-radio"
                   width="24"
@@ -680,10 +685,10 @@
             </div>
           </div>
 
-          <div class="guide-item active">
-            <div class="item-header">
+          <div id="item_05" class="guide-item">
+            <div class="item-header" onclick="itemToggle('item_05')">
               <label class="select-button">
-                <input class="" type="checkbox" name="" id="" />
+                <input type="checkbox" class="radioInput" onclick="selectItem(this)" />
                 <svg
                   class="unchecked-radio"
                   width="24"

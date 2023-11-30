@@ -280,6 +280,11 @@
   transform: translate(60%, 0%);
 }
 @media (max-width: 767px) {
+  .nav-navbar .nav-user-option .nav-option-item .notification-dropdown {
+    transform: translate(10%, 0%);
+  }
+}
+@media (max-width: 767px) {
   .nav-navbar .nav-user-option .nav-option-item .nav-notification {
     background-color: transparent;
   }
@@ -384,6 +389,7 @@
   background-color: #FFFFFF;
 }
 .guide-section .guide-header {
+  cursor: pointer;
   display: flex;
   flex: auto;
   padding: 8px;
@@ -413,6 +419,7 @@
 .guide-section .guide-header .header-info .progress-section .progressbar .bar {
   background-color: #1C181D;
   height: inherit;
+  transition: all 500ms linear;
 }
 .guide-section .guide-header .guide-icon {
   cursor: pointer;
@@ -449,6 +456,9 @@
 }
 .guide-section .guide-body {
   position: relative;
+  display: none;
+}
+.guide-section .guide-body.show {
   display: block;
 }
 .guide-section .guide-body .guide-item {
@@ -457,6 +467,7 @@
   background-color: #FFFFFF;
   padding: 8px;
   margin: 2px 0;
+  transition: all 300ms linear;
 }
 .guide-section .guide-body .guide-item.active {
   padding: 8px 8px 12px 8px;
@@ -488,7 +499,7 @@
   display: none;
 }
 .guide-section .guide-body .guide-item .item-header .select-button input[type=checkbox]:checked + svg {
-  fill: red;
+  fill: #1C181D;
 }
 .guide-section .guide-body .guide-item .item-header .item-title {
   font-size: 13px;
@@ -498,11 +509,6 @@
   position: relative;
   display: none;
 }
-@media (min-width: 1024px) {
-  .guide-section .guide-body .guide-item .item-info {
-    max-width: 483px;
-  }
-}
 .guide-section .guide-body .guide-item .item-info .text-info {
   display: block;
   flex-wrap: wrap;
@@ -511,6 +517,11 @@
   color: #616161;
   font-size: 12px;
   margin-left: 32px;
+}
+@media (min-width: 1024px) {
+  .guide-section .guide-body .guide-item .item-info .text-info {
+    max-width: 483px;
+  }
 }
 .guide-section .guide-body .guide-item .item-info .text-info p {
   margin-bottom: 16px;
@@ -530,6 +541,11 @@
   position: absolute;
   right: 0;
   bottom: 0;
+}
+@media (max-width: 767px) {
+  .guide-section .guide-body .guide-item .item-info svg {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=app.css.map */
