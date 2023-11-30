@@ -537,13 +537,15 @@
 .guide-section .guide-body .guide-item .item-info .info-btn .btn {
   margin-right: 16px;
 }
-.guide-section .guide-body .guide-item .item-info svg {
+.guide-section .guide-body .guide-item .item-info svg, .guide-section .guide-body .guide-item .item-info img {
   position: absolute;
+  width: 155;
+  height: 121;
   right: 0;
   bottom: 0;
 }
 @media (max-width: 767px) {
-  .guide-section .guide-body .guide-item .item-info svg {
+  .guide-section .guide-body .guide-item .item-info svg, .guide-section .guide-body .guide-item .item-info img {
     display: none;
   }
 }
