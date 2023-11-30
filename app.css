@@ -12,6 +12,7 @@
   border-radius: 6px;
   border: 2px solid #1C181D;
   font-size: 12px;
+  font-weight: 600;
   text-align: center;
   padding: 6px 12px;
 }
@@ -35,24 +36,24 @@
   box-shadow: 0 0 1px 2px #005BD3;
 }
 .btn.black-btn {
-  background-color: #1C181D;
+  background-color: #404040;
   color: #E3E3E3;
-  box-shadow: 0 0 1px 2px #005BD3;
+  box-shadow: inset 0px 1.5px 0px 0.95px #616161, inset -1px -2px 0.2px 1px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 .btn.black-btn:hover {
-  background-color: #F7F7F7;
+  background-color: #322F33;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  box-shadow: inset 0 2px 4px #F7F7F7;
+  box-shadow: inset 0px 1.5px 0px 0.95px #616161;
 }
 .btn.black-btn:active {
-  background-color: #F0F0F0;
-  border: 1px solid #F0F0F0;
-  box-shadow: none;
+  background-color: #322F33;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 3.5px 0.2px #1C181D;
 }
 .btn.black-btn:focus {
-  background-color: #FFFFFF;
   border: 1px solid #EBEBEB;
-  box-shadow: 0 0 1px 2px #005BD3;
+  box-shadow: inset 0 0 0 1px #322F33, inset 0px 2px 0px 1.1px #616161, inset -1px -2px 0.2px 1px rgba(0, 0, 0, 0.2), 0 0 0 1.5px #005BD3;
 }
 
 .nav-btn {
@@ -115,6 +116,7 @@
 @media (max-width: 767px) {
   :root main {
     max-width: 100%;
+    min-height: 100dvh;
   }
 }
 @media (min-width: 1024px) {
@@ -415,16 +417,119 @@
 .guide-section .guide-header .guide-icon {
   cursor: pointer;
   border: none;
-  padding: 2px;
-  width: fit-content;
-  height: fit-content;
+  padding: 4px;
+  border-radius: 6px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 500ms linear;
   background-color: transparent;
+}
+.guide-section .guide-header .guide-icon:hover {
+  background-color: #F7F7F7;
+}
+.guide-section .guide-header .guide-icon:active {
+  background-color: #F0F0F0;
+}
+.guide-section .guide-header .guide-icon:focus {
+  background-color: #FFFFFF;
+  outline: 2px solid #005BD3;
 }
 .guide-section .guide-header .guide-icon.expand .expand-icon {
   display: block;
 }
-.guide-section .guide-header .guide-icon .expand-icon {
+.guide-section .guide-header .guide-icon.collapse .collapse-icon {
+  display: block;
+}
+.guide-section .guide-header .guide-icon .expand-icon,
+.guide-section .guide-header .guide-icon .collapse-icon {
   display: none;
+}
+.guide-section .guide-body {
+  position: relative;
+  display: block;
+}
+.guide-section .guide-body .guide-item {
+  display: block;
+  border-radius: 10px;
+  background-color: #FFFFFF;
+  padding: 8px;
+  margin: 2px 0;
+}
+.guide-section .guide-body .guide-item.active {
+  padding: 8px 8px 12px 8px;
+  background-color: #F3f3f3;
+}
+.guide-section .guide-body .guide-item.active .item-header {
+  margin-bottom: 16px;
+}
+.guide-section .guide-body .guide-item.active .item-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+.guide-section .guide-body .guide-item .item-header {
+  cursor: pointer;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.guide-section .guide-body .guide-item .item-header .select-button {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1.5;
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+}
+.guide-section .guide-body .guide-item .item-header .select-button input[type=checkbox] {
+  display: none;
+}
+.guide-section .guide-body .guide-item .item-header .select-button input[type=checkbox]:checked + svg {
+  fill: red;
+}
+.guide-section .guide-body .guide-item .item-header .item-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+.guide-section .guide-body .guide-item .item-info {
+  position: relative;
+  display: none;
+}
+@media (min-width: 1024px) {
+  .guide-section .guide-body .guide-item .item-info {
+    max-width: 483px;
+  }
+}
+.guide-section .guide-body .guide-item .item-info .text-info {
+  display: block;
+  flex-wrap: wrap;
+  flex-direction: column;
+  flex: 1;
+  color: #616161;
+  font-size: 12px;
+  margin-left: 32px;
+}
+.guide-section .guide-body .guide-item .item-info .text-info p {
+  margin-bottom: 16px;
+}
+.guide-section .guide-body .guide-item .item-info .text-info a {
+  color: #005BD3;
+  font-size: 13px;
+}
+.guide-section .guide-body .guide-item .item-info .info-btn {
+  display: flex;
+  align-content: space-between;
+}
+.guide-section .guide-body .guide-item .item-info .info-btn .btn {
+  margin-right: 16px;
+}
+.guide-section .guide-body .guide-item .item-info svg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
 }
 
 /*# sourceMappingURL=app.css.map */
